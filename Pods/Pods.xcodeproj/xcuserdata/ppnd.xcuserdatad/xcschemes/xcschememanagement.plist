@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>CocoaLumberjack.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -49,6 +54,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>YYCache.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>YYImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>YYModel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,7 +77,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>07AA3A40AA17CC98E304FE2C3DEDE8DE</key>
+		<key>0F69C93EE7384A81198B60ABD7A754F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,22 +87,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>21E86F4D36F61F200F7C7E0EB6DCEB42</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>2C71DE0FB8A6E5BB6EAF9FB037D799CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>457BBF425F64EC552C8B264F4985C1D4</key>
+		<key>2F3B61FA66A0974DFC3997ED76F03F0B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4CD8183979F902FC598CDFB694FB14D0</key>
+		<key>4754DB99F3823E2BE1A2D339FF8BB340</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4C4AE7259BA76A2A0D96805214B9441A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>775DE9294ACC564C1F58AE25ABD22BE0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,22 +117,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>82AA6BBE55285E4732981550986A0BA3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>870F3EBAE37AA1C97264ADB99E55042C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A76FCD814A42D7C6CE092D34ABE22035</key>
+		<key>928353533005A4198EBDA5B700D37B64</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EFBC0BD6C989AD9F3B6222757CB89C36</key>
+		<key>E4FC482C1F8A91615E0EDA66DB1085C1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E6381131875B14980A26FD6BE99C4298</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC86B6F2D632D2B22F46A429E2FAF1B3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F2504C7B745CA749CAA8C3BE0CCFFB7A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

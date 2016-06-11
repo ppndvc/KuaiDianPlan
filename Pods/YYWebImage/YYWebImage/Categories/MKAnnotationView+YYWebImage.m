@@ -23,13 +23,13 @@ static int _YYWebImageSetterKey;
 
 @implementation MKAnnotationView (YYWebImage)
 
-- (NSURL *)imageURL {
+- (NSURL *)yy_imageURL {
     _YYWebImageSetter *setter = objc_getAssociatedObject(self, &_YYWebImageSetterKey);
     return setter.imageURL;
 }
 
-- (void)setImageURL:(NSURL *)imageURL {
-    [self setImageWithURL:imageURL
+- (void)setYy_imageURL:(NSURL *)imageURL {
+    [self yy_setImageWithURL:imageURL
               placeholder:nil
                   options:kNilOptions
                   manager:nil
@@ -38,61 +38,61 @@ static int _YYWebImageSetterKey;
                completion:nil];
 }
 
-- (void)setImageWithURL:(NSURL *)imageURL placeholder:(UIImage *)placeholder {
-    [self setImageWithURL:imageURL
-              placeholder:placeholder
-                  options:kNilOptions
-                  manager:nil
-                 progress:nil
-                transform:nil
-               completion:nil];
+- (void)yy_setImageWithURL:(NSURL *)imageURL placeholder:(UIImage *)placeholder {
+    [self yy_setImageWithURL:imageURL
+                 placeholder:placeholder
+                     options:kNilOptions
+                     manager:nil
+                    progress:nil
+                   transform:nil
+                  completion:nil];
 }
 
-- (void)setImageWithURL:(NSURL *)imageURL options:(YYWebImageOptions)options {
-    [self setImageWithURL:imageURL
-              placeholder:nil
-                  options:options
-                  manager:nil
-                 progress:nil
-                transform:nil
-               completion:nil];
+- (void)yy_setImageWithURL:(NSURL *)imageURL options:(YYWebImageOptions)options {
+    [self yy_setImageWithURL:imageURL
+                 placeholder:nil
+                     options:options
+                     manager:nil
+                    progress:nil
+                   transform:nil
+                  completion:nil];
 }
 
-- (void)setImageWithURL:(NSURL *)imageURL
-            placeholder:(UIImage *)placeholder
-                options:(YYWebImageOptions)options
-             completion:(YYWebImageCompletionBlock)completion {
-    [self setImageWithURL:imageURL
-              placeholder:placeholder
-                  options:options
-                  manager:nil
-                 progress:nil
-                transform:nil
-               completion:completion];
+- (void)yy_setImageWithURL:(NSURL *)imageURL
+               placeholder:(UIImage *)placeholder
+                   options:(YYWebImageOptions)options
+                completion:(YYWebImageCompletionBlock)completion {
+    [self yy_setImageWithURL:imageURL
+                 placeholder:placeholder
+                     options:options
+                     manager:nil
+                    progress:nil
+                   transform:nil
+                  completion:completion];
 }
 
-- (void)setImageWithURL:(NSURL *)imageURL
-            placeholder:(UIImage *)placeholder
-                options:(YYWebImageOptions)options
-               progress:(YYWebImageProgressBlock)progress
-              transform:(YYWebImageTransformBlock)transform
-             completion:(YYWebImageCompletionBlock)completion {
-    [self setImageWithURL:imageURL
-              placeholder:placeholder
-                  options:options
-                  manager:nil
-                 progress:progress
-                transform:transform
-               completion:completion];
+- (void)yy_setImageWithURL:(NSURL *)imageURL
+               placeholder:(UIImage *)placeholder
+                   options:(YYWebImageOptions)options
+                  progress:(YYWebImageProgressBlock)progress
+                 transform:(YYWebImageTransformBlock)transform
+                completion:(YYWebImageCompletionBlock)completion {
+    [self yy_setImageWithURL:imageURL
+                 placeholder:placeholder
+                     options:options
+                     manager:nil
+                    progress:progress
+                   transform:transform
+                  completion:completion];
 }
 
-- (void)setImageWithURL:(NSURL *)imageURL
-            placeholder:(UIImage *)placeholder
-                options:(YYWebImageOptions)options
-                manager:(YYWebImageManager *)manager
-               progress:(YYWebImageProgressBlock)progress
-              transform:(YYWebImageTransformBlock)transform
-             completion:(YYWebImageCompletionBlock)completion {
+- (void)yy_setImageWithURL:(NSURL *)imageURL
+               placeholder:(UIImage *)placeholder
+                   options:(YYWebImageOptions)options
+                   manager:(YYWebImageManager *)manager
+                  progress:(YYWebImageProgressBlock)progress
+                 transform:(YYWebImageTransformBlock)transform
+                completion:(YYWebImageCompletionBlock)completion {
     if ([imageURL isKindOfClass:[NSString class]]) imageURL = [NSURL URLWithString:(id)imageURL];
     manager = manager ? manager : [YYWebImageManager sharedManager];
     
@@ -145,12 +145,15 @@ static int _YYWebImageSetterKey;
                 });
             };
             
+            __block int32_t newSentinel = 0;
+            __block __weak typeof(setter) weakSetter = nil;
             YYWebImageCompletionBlock _completion = ^(UIImage *image, NSURL *url, YYWebImageFromType from, YYWebImageStage stage, NSError *error) {
                 __strong typeof(_self) self = _self;
                 BOOL setImage = (stage == YYWebImageStageFinished || stage == YYWebImageStageProgress) && image && !(options & YYWebImageOptionAvoidSetImage);
                 BOOL showFade = ((options & YYWebImageOptionSetImageWithFadeAnimation) && !self.highlighted);
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    if (setImage && self) {
+                    BOOL sentinelChanged = weakSetter && weakSetter.sentinel != newSentinel;
+                    if (setImage && self && !sentinelChanged) {
                         if (showFade) {
                             CATransition *transition = [CATransition animation];
                             transition.duration = stage == YYWebImageStageFinished ? _YYWebImageFadeTime : _YYWebImageProgressiveFadeTime;
@@ -160,16 +163,23 @@ static int _YYWebImageSetterKey;
                         }
                         self.image = image;
                     }
-                    if (completion) completion(image, url, from, stage, error);
+                    if (completion) {
+                        if (sentinelChanged) {
+                            completion(nil, url, YYWebImageFromNone, YYWebImageStageCancelled, nil);
+                        } else {
+                            completion(image, url, from, stage, error);
+                        }
+                    }
                 });
             };
             
-            [setter setOperationWithSentinel:sentinel url:imageURL options:options manager:manager progress:_progress transform:transform completion:_completion];
+            newSentinel = [setter setOperationWithSentinel:sentinel url:imageURL options:options manager:manager progress:_progress transform:transform completion:_completion];
+            weakSetter = setter;
         });
     });
 }
 
-- (void)cancelCurrentImageRequest {
+- (void)yy_cancelCurrentImageRequest {
     _YYWebImageSetter *setter = objc_getAssociatedObject(self, &_YYWebImageSetterKey);
     if (setter) [setter cancel];
 }

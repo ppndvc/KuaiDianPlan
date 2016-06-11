@@ -12,6 +12,11 @@
 		5B3F53F31D0AF4F3004DB523 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3F53F21D0AF4F3004DB523 /* ViewController.m */; };
 		5B3F53F81D0AF4F3004DB523 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B3F53F71D0AF4F3004DB523 /* Assets.xcassets */; };
 		5B3F53FB1D0AF4F3004DB523 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B3F53F91D0AF4F3004DB523 /* LaunchScreen.storyboard */; };
+		5BD91D121D0BF366006F64BE /* KDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD91D111D0BF366006F64BE /* KDBaseViewController.m */; };
+		5BD91D191D0BF643006F64BE /* KDDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD91D181D0BF643006F64BE /* KDDefines.m */; };
+		5BD91D211D0BFD6B006F64BE /* KDBaseVCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD91D201D0BFD6B006F64BE /* KDBaseVCModel.m */; };
+		5BD91D251D0C0578006F64BE /* KDNetworkReachableManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD91D241D0C0578006F64BE /* KDNetworkReachableManager.m */; };
+		5BD91D2A1D0C5128006F64BE /* KDAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD91D291D0C5128006F64BE /* KDAppearance.m */; };
 		92C8CBC7938235582D75E089 /* libPods-KuaiDianPlan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 250F2444DBCCD0AF25E451D4 /* libPods-KuaiDianPlan.a */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +33,17 @@
 		5B3F53F71D0AF4F3004DB523 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B3F53FA1D0AF4F3004DB523 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B3F53FC1D0AF4F3004DB523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BD91D101D0BF366006F64BE /* KDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDBaseViewController.h; path = BaseClass/KDBaseViewController.h; sourceTree = "<group>"; };
+		5BD91D111D0BF366006F64BE /* KDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDBaseViewController.m; path = BaseClass/KDBaseViewController.m; sourceTree = "<group>"; };
+		5BD91D151D0BF4CA006F64BE /* KuaiDianPlan-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KuaiDianPlan-Prefix.pch"; sourceTree = "<group>"; };
+		5BD91D171D0BF643006F64BE /* KDDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDDefines.h; path = KDDefines/KDDefines.h; sourceTree = "<group>"; };
+		5BD91D181D0BF643006F64BE /* KDDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDDefines.m; path = KDDefines/KDDefines.m; sourceTree = "<group>"; };
+		5BD91D1F1D0BFD6B006F64BE /* KDBaseVCModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDBaseVCModel.h; path = BaseClass/KDBaseModel/KDBaseVCModel.h; sourceTree = "<group>"; };
+		5BD91D201D0BFD6B006F64BE /* KDBaseVCModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDBaseVCModel.m; path = BaseClass/KDBaseModel/KDBaseVCModel.m; sourceTree = "<group>"; };
+		5BD91D231D0C0578006F64BE /* KDNetworkReachableManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDNetworkReachableManager.h; path = Network/KDNetworkReachableManager.h; sourceTree = "<group>"; };
+		5BD91D241D0C0578006F64BE /* KDNetworkReachableManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDNetworkReachableManager.m; path = Network/KDNetworkReachableManager.m; sourceTree = "<group>"; };
+		5BD91D281D0C5128006F64BE /* KDAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDAppearance.h; path = Utils/KDAppearance.h; sourceTree = "<group>"; };
+		5BD91D291D0C5128006F64BE /* KDAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDAppearance.m; path = Utils/KDAppearance.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +88,10 @@
 		5B3F53EA1D0AF4F3004DB523 /* KuaiDianPlan */ = {
 			isa = PBXGroup;
 			children = (
+				5BD91D271D0C5105006F64BE /* Utils */,
+				5BD91D221D0C052F006F64BE /* Network */,
+				5BD91D161D0BF5E9006F64BE /* KDDefines */,
+				5BD91D0F1D0BF323006F64BE /* BaseClass */,
 				5B3F53EE1D0AF4F3004DB523 /* AppDelegate.h */,
 				5B3F53EF1D0AF4F3004DB523 /* AppDelegate.m */,
 				5B3F53F11D0AF4F3004DB523 /* ViewController.h */,
@@ -80,6 +100,7 @@
 				5B3F53F91D0AF4F3004DB523 /* LaunchScreen.storyboard */,
 				5B3F53FC1D0AF4F3004DB523 /* Info.plist */,
 				5B3F53EB1D0AF4F3004DB523 /* Supporting Files */,
+				5BD91D151D0BF4CA006F64BE /* KuaiDianPlan-Prefix.pch */,
 			);
 			path = KuaiDianPlan;
 			sourceTree = "<group>";
@@ -90,6 +111,52 @@
 				5B3F53EC1D0AF4F3004DB523 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5BD91D0F1D0BF323006F64BE /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				5BD91D1E1D0BFCC1006F64BE /* KDBaseModels */,
+				5BD91D101D0BF366006F64BE /* KDBaseViewController.h */,
+				5BD91D111D0BF366006F64BE /* KDBaseViewController.m */,
+			);
+			name = BaseClass;
+			sourceTree = "<group>";
+		};
+		5BD91D161D0BF5E9006F64BE /* KDDefines */ = {
+			isa = PBXGroup;
+			children = (
+				5BD91D171D0BF643006F64BE /* KDDefines.h */,
+				5BD91D181D0BF643006F64BE /* KDDefines.m */,
+			);
+			name = KDDefines;
+			sourceTree = "<group>";
+		};
+		5BD91D1E1D0BFCC1006F64BE /* KDBaseModels */ = {
+			isa = PBXGroup;
+			children = (
+				5BD91D1F1D0BFD6B006F64BE /* KDBaseVCModel.h */,
+				5BD91D201D0BFD6B006F64BE /* KDBaseVCModel.m */,
+			);
+			name = KDBaseModels;
+			sourceTree = "<group>";
+		};
+		5BD91D221D0C052F006F64BE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5BD91D231D0C0578006F64BE /* KDNetworkReachableManager.h */,
+				5BD91D241D0C0578006F64BE /* KDNetworkReachableManager.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		5BD91D271D0C5105006F64BE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5BD91D281D0C5128006F64BE /* KDAppearance.h */,
+				5BD91D291D0C5128006F64BE /* KDAppearance.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		E142138932BCF2E7684E3034 /* Frameworks */ = {
@@ -221,9 +288,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD91D2A1D0C5128006F64BE /* KDAppearance.m in Sources */,
 				5B3F53F31D0AF4F3004DB523 /* ViewController.m in Sources */,
 				5B3F53F01D0AF4F3004DB523 /* AppDelegate.m in Sources */,
+				5BD91D121D0BF366006F64BE /* KDBaseViewController.m in Sources */,
+				5BD91D191D0BF643006F64BE /* KDDefines.m in Sources */,
+				5BD91D211D0BFD6B006F64BE /* KDBaseVCModel.m in Sources */,
 				5B3F53ED1D0AF4F3004DB523 /* main.m in Sources */,
+				5BD91D251D0C0578006F64BE /* KDNetworkReachableManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +398,8 @@
 			baseConfigurationReference = 00F4CE2DD463ADBB0C185C61 /* Pods-KuaiDianPlan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KuaiDianPlan/KuaiDianPlan-Prefix.pch";
 				INFOPLIST_FILE = KuaiDianPlan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cn.zy.KuaiDianPlan;
@@ -338,6 +412,8 @@
 			baseConfigurationReference = 05B7EF0390144FD279AC4879 /* Pods-KuaiDianPlan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KuaiDianPlan/KuaiDianPlan-Prefix.pch";
 				INFOPLIST_FILE = KuaiDianPlan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cn.zy.KuaiDianPlan;

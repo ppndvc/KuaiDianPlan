@@ -12,6 +12,7 @@
 #import "YYWebImageOperation.h"
 #import "UIImage+YYWebImage.h"
 #import <ImageIO/ImageIO.h>
+#import <libkern/OSAtomic.h>
 
 #if __has_include(<YYImage/YYImage.h>)
 #import <YYImage/YYImage.h>
@@ -19,14 +20,25 @@
 #import "YYImage.h"
 #endif
 
-#if __has_include("YYDispatchQueuePool.h")
-#import "YYDispatchQueuePool.h"
-#else
-#import <libkern/OSAtomic.h>
-#endif
 
 #define MIN_PROGRESSIVE_TIME_INTERVAL 0.2
 #define MIN_PROGRESSIVE_BLUR_TIME_INTERVAL 0.4
+
+
+/// Returns nil in App Extension.
+static UIApplication *_YYSharedApplication() {
+    static BOOL isAppExtension = NO;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        Class cls = NSClassFromString(@"UIApplication");
+        if(!cls || ![cls respondsToSelector:@selector(sharedApplication)]) isAppExtension = YES;
+        if ([[[NSBundle mainBundle] bundlePath] hasSuffix:@".appex"]) isAppExtension = YES;
+    });
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+    return isAppExtension ? nil : [UIApplication performSelector:@selector(sharedApplication)];
+#pragma clang diagnostic pop
+}
 
 /// Returns YES if the right-bottom pixel is filled.
 static BOOL YYCGImageLastPixelFilled(CGImageRef image) {
@@ -53,6 +65,35 @@ static NSData *JPEGSOSMarker() {
         marker = [NSData dataWithBytes:bytes length:2];
     });
     return marker;
+}
+
+
+static NSMutableSet *URLBlacklist;
+static dispatch_semaphore_t URLBlacklistLock;
+
+static void URLBlacklistInit() {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        URLBlacklist = [NSMutableSet new];
+        URLBlacklistLock = dispatch_semaphore_create(1);
+    });
+}
+
+static BOOL URLBlackListContains(NSURL *url) {
+    if (!url || url == (id)[NSNull null]) return NO;
+    URLBlacklistInit();
+    dispatch_semaphore_wait(URLBlacklistLock, DISPATCH_TIME_FOREVER);
+    BOOL contains = [URLBlacklist containsObject:url];
+    dispatch_semaphore_signal(URLBlacklistLock);
+    return contains;
+}
+
+static void URLInBlackListAdd(NSURL *url) {
+    if (!url || url == (id)[NSNull null]) return;
+    URLBlacklistInit();
+    dispatch_semaphore_wait(URLBlacklistLock, DISPATCH_TIME_FOREVER);
+    [URLBlacklist addObject:url];
+    dispatch_semaphore_signal(URLBlacklistLock);
 }
 
 
@@ -172,9 +213,6 @@ static NSData *JPEGSOSMarker() {
 
 /// Global image queue, used for image reading and decoding.
 + (dispatch_queue_t)_imageQueue {
-#ifdef YYDispatchQueuePool_h
-    return YYDispatchQueueGetForQOS(NSQualityOfServiceUtility);
-#else
     #define MAX_QUEUE_COUNT 16
     static int queueCount;
     static dispatch_queue_t queues[MAX_QUEUE_COUNT];
@@ -199,12 +237,11 @@ static NSData *JPEGSOSMarker() {
     if (cur < 0) cur = -cur;
     return queues[(cur) % queueCount];
     #undef MAX_QUEUE_COUNT
-#endif
 }
 
 - (instancetype)init {
     @throw [NSException exceptionWithName:@"YYWebImageOperation init error" reason:@"YYWebImageOperation must be initialized with a request. Use the designated initializer to init." userInfo:nil];
-    return [self initWithRequest:nil options:0 cache:nil cacheKey:nil progress:nil transform:nil completion:nil];
+    return [self initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@""]] options:0 cache:nil cacheKey:nil progress:nil transform:nil completion:nil];
 }
 
 - (instancetype)initWithRequest:(NSURLRequest *)request
@@ -235,7 +272,7 @@ static NSData *JPEGSOSMarker() {
 - (void)dealloc {
     [_lock lock];
     if (_taskID != UIBackgroundTaskInvalid) {
-        [[UIApplication sharedApplication] endBackgroundTask:_taskID];
+        [_YYSharedApplication() endBackgroundTask:_taskID];
         _taskID = UIBackgroundTaskInvalid;
     }
     if ([self isExecuting]) {
@@ -259,7 +296,7 @@ static NSData *JPEGSOSMarker() {
 - (void)_endBackgroundTask {
     [_lock lock];
     if (_taskID != UIBackgroundTaskInvalid) {
-        [[UIApplication sharedApplication] endBackgroundTask:_taskID];
+        [_YYSharedApplication() endBackgroundTask:_taskID];
         _taskID = UIBackgroundTaskInvalid;
     }
     [_lock unlock];
@@ -285,7 +322,7 @@ static NSData *JPEGSOSMarker() {
             if (image) {
                 [_lock lock];
                 if (![self isCancelled]) {
-                    if (_completion) _completion(image, _request.URL, YYWebImageFromMemoryCache, YYWebImageStageCancelled, nil);
+                    if (_completion) _completion(image, _request.URL, YYWebImageFromMemoryCache, YYWebImageStageFinished, nil);
                 }
                 [self _finish];
                 [_lock unlock];
@@ -315,6 +352,17 @@ static NSData *JPEGSOSMarker() {
 - (void)_startRequest:(id)object {
     if ([self isCancelled]) return;
     @autoreleasepool {
+        if ((_options & YYWebImageOptionIgnoreFailedURL) && URLBlackListContains(_request.URL)) {
+            NSError *error = [NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorFileDoesNotExist userInfo:@{ NSLocalizedDescriptionKey : @"Failed to load URL, blacklisted." }];
+            [_lock lock];
+            if (![self isCancelled]) {
+                if (_completion) _completion(nil, _request.URL, YYWebImageFromNone, YYWebImageStageFinished, error);
+            }
+            [self _finish];
+            [_lock unlock];
+            return;
+        }
+        
         if (_request.URL.isFileURL) {
             NSArray *keys = @[NSURLFileSizeKey];
             NSDictionary *attr = [_request.URL resourceValuesForKeys:keys error:nil];
@@ -382,6 +430,13 @@ static NSData *JPEGSOSMarker() {
             NSError *error = nil;
             if (!image) {
                 error = [NSError errorWithDomain:@"com.ibireme.image" code:-1 userInfo:@{ NSLocalizedDescriptionKey : @"Web image decode fail." }];
+                if (_options & YYWebImageOptionIgnoreFailedURL) {
+                    if (URLBlackListContains(_request.URL)) {
+                        error = [NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorFileDoesNotExist userInfo:@{ NSLocalizedDescriptionKey : @"Failed to load URL, blacklisted." }];
+                    } else {
+                        URLInBlackListAdd(_request.URL);
+                    }
+                }
             }
             if (_completion) _completion(image, _request.URL, YYWebImageFromRemote, YYWebImageStageFinished, error);
             [self _finish];
@@ -426,8 +481,7 @@ static NSData *JPEGSOSMarker() {
         return cachedResponse;
     } else {
         // ignore NSURLCache
-        NSCachedURLResponse *response = [[NSCachedURLResponse alloc] initWithResponse:cachedResponse.response data:cachedResponse.data userInfo:cachedResponse.userInfo ? cachedResponse.userInfo : @{} storagePolicy:NSURLCacheStorageNotAllowed];
-        return response;
+        return nil;
     }
 }
 
@@ -666,6 +720,15 @@ static NSData *JPEGSOSMarker() {
                 [YYWebImageManager decrementNetworkActivityCount];
             }
             [self _finish];
+            
+            if (_options & YYWebImageOptionIgnoreFailedURL) {
+                if (error.code != NSURLErrorNotConnectedToInternet &&
+                    error.code != NSURLErrorCancelled &&
+                    error.code != NSURLErrorTimedOut &&
+                    error.code != NSURLErrorUserCancelledAuthentication) {
+                    URLInBlackListAdd(_request.URL);
+                }
+            }
         }
         [_lock unlock];
     }
@@ -690,10 +753,10 @@ static NSData *JPEGSOSMarker() {
             } else {
                 self.executing = YES;
                 [self performSelector:@selector(_startOperation) onThread:[[self class] _networkThread] withObject:nil waitUntilDone:NO modes:@[NSDefaultRunLoopMode]];
-                if (_options & YYWebImageOptionAllowBackgroundTask) {
+                if ((_options & YYWebImageOptionAllowBackgroundTask) && _YYSharedApplication()) {
                     __weak __typeof__ (self) _self = self;
                     if (_taskID == UIBackgroundTaskInvalid) {
-                        _taskID = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+                        _taskID = [_YYSharedApplication() beginBackgroundTaskWithExpirationHandler:^{
                             __strong __typeof (_self) self = _self;
                             if (self) {
                                 [self cancel];
