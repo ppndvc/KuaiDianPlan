@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YYCache.h"
 
 @interface KDCacheManager : NSObject
+//类方法
++ (instancetype)sharedInstance;
+
+//系统配置的cache
+-(YYCache *)systemCache;
+
+//用户cache
+-(YYCache *)userCache;
 
 @end

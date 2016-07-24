@@ -9,5 +9,16 @@
 #import <Foundation/Foundation.h>
 
 @interface KDEnvironmentManager : NSObject
+//类方法
++ (instancetype)sharedInstance;
+
+//设置和获取方法
+-(void)setEnvironmentType:(KDEnvironmentType)type;
+-(void)setURLPrfixType:(KDURLPrefixType)prefixType;
+-(KDEnvironmentType)getEnvironmentType;
+-(KDURLPrefixType)getURLPrefixType;
+
+//获取网络请求的基础URL
+-(NSString *)getBaseURL;
 
 @end

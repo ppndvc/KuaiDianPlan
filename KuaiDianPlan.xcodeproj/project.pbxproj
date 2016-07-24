@@ -12,6 +12,36 @@
 		5B3F53F31D0AF4F3004DB523 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3F53F21D0AF4F3004DB523 /* ViewController.m */; };
 		5B3F53F81D0AF4F3004DB523 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B3F53F71D0AF4F3004DB523 /* Assets.xcassets */; };
 		5B3F53FB1D0AF4F3004DB523 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B3F53F91D0AF4F3004DB523 /* LaunchScreen.storyboard */; };
+		5B66AC9D1D152E060021FD5F /* KDEnvironmentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B66AC9C1D152E060021FD5F /* KDEnvironmentManager.m */; };
+		5B66ACA11D1551510021FD5F /* KDCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B66ACA01D1551510021FD5F /* KDCacheManager.m */; };
+		5B91AFE01D44C8C10064562D /* fast_meal_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B91AFD81D44C8C10064562D /* fast_meal_selected@2x.png */; };
+		5B91AFE11D44C8C10064562D /* fast_meal_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B91AFD91D44C8C10064562D /* fast_meal_selected@3x.png */; };
+		5B91AFE21D44C8C10064562D /* main_page_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B91AFDA1D44C8C10064562D /* main_page_selected@2x.png */; };
+		5B91AFE31D44C8C10064562D /* main_page_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B91AFDB1D44C8C10064562D /* main_page_selected@3x.png */; };
+		5B91AFE41D44C8C10064562D /* mine_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B91AFDC1D44C8C10064562D /* mine_selected@2x.png */; };
+		5B91AFE51D44C8C10064562D /* mine_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B91AFDD1D44C8C10064562D /* mine_selected@3x.png */; };
+		5B91AFE61D44C8C10064562D /* order_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B91AFDE1D44C8C10064562D /* order_selected@2x.png */; };
+		5B91AFE71D44C8C10064562D /* order_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B91AFDF1D44C8C10064562D /* order_selected@3x.png */; };
+		5B91AFEF1D44D7F20064562D /* KDMainPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91AFEE1D44D7F20064562D /* KDMainPageController.m */; };
+		5B91B0051D44DCF40064562D /* NSData+SDDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91AFF51D44DCF40064562D /* NSData+SDDataCache.m */; };
+		5B91B0061D44DCF40064562D /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91AFF81D44DCF40064562D /* TAAbstractDotView.m */; };
+		5B91B0071D44DCF40064562D /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91AFFA1D44DCF40064562D /* TAAnimatedDotView.m */; };
+		5B91B0081D44DCF40064562D /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91AFFC1D44DCF40064562D /* TADotView.m */; };
+		5B91B0091D44DCF40064562D /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91AFFE1D44DCF40064562D /* TAPageControl.m */; };
+		5B91B00A1D44DCF40064562D /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91B0001D44DCF40064562D /* SDCollectionViewCell.m */; };
+		5B91B00B1D44DCF40064562D /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91B0021D44DCF40064562D /* SDCycleScrollView.m */; };
+		5B91B00C1D44DCF40064562D /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91B0041D44DCF40064562D /* UIView+SDExtension.m */; };
+		5B91B01B1D44F29D0064562D /* KDAdvertiseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91B0181D44F29D0064562D /* KDAdvertiseModel.m */; };
+		5B91B01C1D44F29D0064562D /* KDLocaionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91B01A1D44F29D0064562D /* KDLocaionModel.m */; };
+		5B91B01F1D44F5360064562D /* KDActionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91B01E1D44F5360064562D /* KDActionModel.m */; };
+		5B91B0221D44F6F40064562D /* KDShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91B0211D44F6F40064562D /* KDShopModel.m */; };
+		5B91B0251D44FA770064562D /* KDActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91B0241D44FA770064562D /* KDActivityModel.m */; };
+		5B91B0281D4500EB0064562D /* KDActionPanelViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91B0271D4500EB0064562D /* KDActionPanelViewModel.m */; };
+		5B91B02D1D4504AB0064562D /* KDActionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91B02B1D4504AB0064562D /* KDActionCollectionViewCell.m */; };
+		5B91B02E1D4504AB0064562D /* KDActionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B91B02C1D4504AB0064562D /* KDActionCollectionViewCell.xib */; };
+		5BCEDBDE1D1C2A3100EBD946 /* KDRouterManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BCEDBDD1D1C2A3100EBD946 /* KDRouterManger.m */; };
+		5BCEDBE21D1FB5DF00EBD946 /* KDLoggerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BCEDBE11D1FB5DF00EBD946 /* KDLoggerManager.m */; };
+		5BCEDBE51D1FBA1F00EBD946 /* KDDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BCEDBE41D1FBA1F00EBD946 /* KDDeviceInfo.m */; };
 		5BD91D121D0BF366006F64BE /* KDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD91D111D0BF366006F64BE /* KDBaseViewController.m */; };
 		5BD91D191D0BF643006F64BE /* KDDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD91D181D0BF643006F64BE /* KDDefines.m */; };
 		5BD91D211D0BFD6B006F64BE /* KDBaseVCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD91D201D0BFD6B006F64BE /* KDBaseVCModel.m */; };
@@ -33,6 +63,57 @@
 		5B3F53F71D0AF4F3004DB523 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B3F53FA1D0AF4F3004DB523 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B3F53FC1D0AF4F3004DB523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B66AC9B1D152E060021FD5F /* KDEnvironmentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDEnvironmentManager.h; path = Network/KDEnvironmentManager.h; sourceTree = "<group>"; };
+		5B66AC9C1D152E060021FD5F /* KDEnvironmentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDEnvironmentManager.m; path = Network/KDEnvironmentManager.m; sourceTree = "<group>"; };
+		5B66AC9F1D1551510021FD5F /* KDCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDCacheManager.h; path = Utils/KDCacheManager.h; sourceTree = "<group>"; };
+		5B66ACA01D1551510021FD5F /* KDCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDCacheManager.m; path = Utils/KDCacheManager.m; sourceTree = "<group>"; };
+		5B91AFD81D44C8C10064562D /* fast_meal_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fast_meal_selected@2x.png"; path = "Resource/Tabbar/fast_meal_selected@2x.png"; sourceTree = "<group>"; };
+		5B91AFD91D44C8C10064562D /* fast_meal_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fast_meal_selected@3x.png"; path = "Resource/Tabbar/fast_meal_selected@3x.png"; sourceTree = "<group>"; };
+		5B91AFDA1D44C8C10064562D /* main_page_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "main_page_selected@2x.png"; path = "Resource/Tabbar/main_page_selected@2x.png"; sourceTree = "<group>"; };
+		5B91AFDB1D44C8C10064562D /* main_page_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "main_page_selected@3x.png"; path = "Resource/Tabbar/main_page_selected@3x.png"; sourceTree = "<group>"; };
+		5B91AFDC1D44C8C10064562D /* mine_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mine_selected@2x.png"; path = "Resource/Tabbar/mine_selected@2x.png"; sourceTree = "<group>"; };
+		5B91AFDD1D44C8C10064562D /* mine_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mine_selected@3x.png"; path = "Resource/Tabbar/mine_selected@3x.png"; sourceTree = "<group>"; };
+		5B91AFDE1D44C8C10064562D /* order_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "order_selected@2x.png"; path = "Resource/Tabbar/order_selected@2x.png"; sourceTree = "<group>"; };
+		5B91AFDF1D44C8C10064562D /* order_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "order_selected@3x.png"; path = "Resource/Tabbar/order_selected@3x.png"; sourceTree = "<group>"; };
+		5B91AFED1D44D7F20064562D /* KDMainPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDMainPageController.h; path = "主页/ViewController/KDMainPageController.h"; sourceTree = "<group>"; };
+		5B91AFEE1D44D7F20064562D /* KDMainPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDMainPageController.m; path = "主页/ViewController/KDMainPageController.m"; sourceTree = "<group>"; };
+		5B91AFF41D44DCF40064562D /* NSData+SDDataCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+SDDataCache.h"; path = "3rdLibs/SDCycleScrollView/NSData+SDDataCache.h"; sourceTree = "<group>"; };
+		5B91AFF51D44DCF40064562D /* NSData+SDDataCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+SDDataCache.m"; path = "3rdLibs/SDCycleScrollView/NSData+SDDataCache.m"; sourceTree = "<group>"; };
+		5B91AFF71D44DCF40064562D /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
+		5B91AFF81D44DCF40064562D /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
+		5B91AFF91D44DCF40064562D /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
+		5B91AFFA1D44DCF40064562D /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
+		5B91AFFB1D44DCF40064562D /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
+		5B91AFFC1D44DCF40064562D /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
+		5B91AFFD1D44DCF40064562D /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
+		5B91AFFE1D44DCF40064562D /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
+		5B91AFFF1D44DCF40064562D /* SDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDCollectionViewCell.h; path = 3rdLibs/SDCycleScrollView/SDCollectionViewCell.h; sourceTree = "<group>"; };
+		5B91B0001D44DCF40064562D /* SDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDCollectionViewCell.m; path = 3rdLibs/SDCycleScrollView/SDCollectionViewCell.m; sourceTree = "<group>"; };
+		5B91B0011D44DCF40064562D /* SDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDCycleScrollView.h; path = 3rdLibs/SDCycleScrollView/SDCycleScrollView.h; sourceTree = "<group>"; };
+		5B91B0021D44DCF40064562D /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDCycleScrollView.m; path = 3rdLibs/SDCycleScrollView/SDCycleScrollView.m; sourceTree = "<group>"; };
+		5B91B0031D44DCF40064562D /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+SDExtension.h"; path = "3rdLibs/SDCycleScrollView/UIView+SDExtension.h"; sourceTree = "<group>"; };
+		5B91B0041D44DCF40064562D /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+SDExtension.m"; path = "3rdLibs/SDCycleScrollView/UIView+SDExtension.m"; sourceTree = "<group>"; };
+		5B91B0171D44F29D0064562D /* KDAdvertiseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDAdvertiseModel.h; path = CommonModels/KDAdvertiseModel.h; sourceTree = "<group>"; };
+		5B91B0181D44F29D0064562D /* KDAdvertiseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDAdvertiseModel.m; path = CommonModels/KDAdvertiseModel.m; sourceTree = "<group>"; };
+		5B91B0191D44F29D0064562D /* KDLocaionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDLocaionModel.h; path = CommonModels/KDLocaionModel.h; sourceTree = "<group>"; };
+		5B91B01A1D44F29D0064562D /* KDLocaionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDLocaionModel.m; path = CommonModels/KDLocaionModel.m; sourceTree = "<group>"; };
+		5B91B01D1D44F5360064562D /* KDActionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDActionModel.h; path = CommonModels/KDActionModel.h; sourceTree = "<group>"; };
+		5B91B01E1D44F5360064562D /* KDActionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDActionModel.m; path = CommonModels/KDActionModel.m; sourceTree = "<group>"; };
+		5B91B0201D44F6F40064562D /* KDShopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDShopModel.h; path = CommonModels/KDShopModel.h; sourceTree = "<group>"; };
+		5B91B0211D44F6F40064562D /* KDShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDShopModel.m; path = CommonModels/KDShopModel.m; sourceTree = "<group>"; };
+		5B91B0231D44FA770064562D /* KDActivityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDActivityModel.h; path = CommonModels/KDActivityModel.h; sourceTree = "<group>"; };
+		5B91B0241D44FA770064562D /* KDActivityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDActivityModel.m; path = CommonModels/KDActivityModel.m; sourceTree = "<group>"; };
+		5B91B0261D4500EB0064562D /* KDActionPanelViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDActionPanelViewModel.h; path = "主页/ViewModel/KDActionPanelViewModel.h"; sourceTree = "<group>"; };
+		5B91B0271D4500EB0064562D /* KDActionPanelViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDActionPanelViewModel.m; path = "主页/ViewModel/KDActionPanelViewModel.m"; sourceTree = "<group>"; };
+		5B91B02A1D4504AB0064562D /* KDActionCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDActionCollectionViewCell.h; path = "主页/View/KDActionCollectionViewCell.h"; sourceTree = "<group>"; };
+		5B91B02B1D4504AB0064562D /* KDActionCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDActionCollectionViewCell.m; path = "主页/View/KDActionCollectionViewCell.m"; sourceTree = "<group>"; };
+		5B91B02C1D4504AB0064562D /* KDActionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KDActionCollectionViewCell.xib; path = "主页/View/KDActionCollectionViewCell.xib"; sourceTree = "<group>"; };
+		5BCEDBDC1D1C2A3100EBD946 /* KDRouterManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDRouterManger.h; path = Router/KDRouterManger.h; sourceTree = "<group>"; };
+		5BCEDBDD1D1C2A3100EBD946 /* KDRouterManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDRouterManger.m; path = Router/KDRouterManger.m; sourceTree = "<group>"; };
+		5BCEDBE01D1FB5DF00EBD946 /* KDLoggerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDLoggerManager.h; path = Utils/KDLoggerManager.h; sourceTree = "<group>"; };
+		5BCEDBE11D1FB5DF00EBD946 /* KDLoggerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDLoggerManager.m; path = Utils/KDLoggerManager.m; sourceTree = "<group>"; };
+		5BCEDBE31D1FBA1F00EBD946 /* KDDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDDeviceInfo.h; path = Utils/KDDeviceInfo.h; sourceTree = "<group>"; };
+		5BCEDBE41D1FBA1F00EBD946 /* KDDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDDeviceInfo.m; path = Utils/KDDeviceInfo.m; sourceTree = "<group>"; };
 		5BD91D101D0BF366006F64BE /* KDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDBaseViewController.h; path = BaseClass/KDBaseViewController.h; sourceTree = "<group>"; };
 		5BD91D111D0BF366006F64BE /* KDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDBaseViewController.m; path = BaseClass/KDBaseViewController.m; sourceTree = "<group>"; };
 		5BD91D151D0BF4CA006F64BE /* KuaiDianPlan-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KuaiDianPlan-Prefix.pch"; sourceTree = "<group>"; };
@@ -88,6 +169,11 @@
 		5B3F53EA1D0AF4F3004DB523 /* KuaiDianPlan */ = {
 			isa = PBXGroup;
 			children = (
+				5B91B0161D44F2410064562D /* CommonModels */,
+				5B91AFF21D44DCC50064562D /* 3rdLibs */,
+				5B91AFE91D44D75F0064562D /* 主页 */,
+				5B91AFD21D44C4340064562D /* Resource */,
+				5BCEDBDB1D1C2A0400EBD946 /* Router */,
 				5BD91D271D0C5105006F64BE /* Utils */,
 				5BD91D221D0C052F006F64BE /* Network */,
 				5BD91D161D0BF5E9006F64BE /* KDDefines */,
@@ -111,6 +197,141 @@
 				5B3F53EC1D0AF4F3004DB523 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5B91AFD21D44C4340064562D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				5B91AFD51D44C84C0064562D /* Tabbar */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		5B91AFD51D44C84C0064562D /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				5B91AFD81D44C8C10064562D /* fast_meal_selected@2x.png */,
+				5B91AFD91D44C8C10064562D /* fast_meal_selected@3x.png */,
+				5B91AFDA1D44C8C10064562D /* main_page_selected@2x.png */,
+				5B91AFDB1D44C8C10064562D /* main_page_selected@3x.png */,
+				5B91AFDC1D44C8C10064562D /* mine_selected@2x.png */,
+				5B91AFDD1D44C8C10064562D /* mine_selected@3x.png */,
+				5B91AFDE1D44C8C10064562D /* order_selected@2x.png */,
+				5B91AFDF1D44C8C10064562D /* order_selected@3x.png */,
+			);
+			name = Tabbar;
+			sourceTree = "<group>";
+		};
+		5B91AFE91D44D75F0064562D /* 主页 */ = {
+			isa = PBXGroup;
+			children = (
+				5B91B0291D4504610064562D /* View */,
+				5B91AFEC1D44D79E0064562D /* Model */,
+				5B91AFEB1D44D7920064562D /* ViewModel */,
+				5B91AFEA1D44D7850064562D /* ViewController */,
+			);
+			name = "主页";
+			sourceTree = "<group>";
+		};
+		5B91AFEA1D44D7850064562D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5B91AFED1D44D7F20064562D /* KDMainPageController.h */,
+				5B91AFEE1D44D7F20064562D /* KDMainPageController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		5B91AFEB1D44D7920064562D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5B91B0261D4500EB0064562D /* KDActionPanelViewModel.h */,
+				5B91B0271D4500EB0064562D /* KDActionPanelViewModel.m */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		5B91AFEC1D44D79E0064562D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5B91B01D1D44F5360064562D /* KDActionModel.h */,
+				5B91B01E1D44F5360064562D /* KDActionModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5B91AFF21D44DCC50064562D /* 3rdLibs */ = {
+			isa = PBXGroup;
+			children = (
+				5B91AFF31D44DCDD0064562D /* SDCycleScrollView */,
+			);
+			name = 3rdLibs;
+			sourceTree = "<group>";
+		};
+		5B91AFF31D44DCDD0064562D /* SDCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				5B91AFF41D44DCF40064562D /* NSData+SDDataCache.h */,
+				5B91AFF51D44DCF40064562D /* NSData+SDDataCache.m */,
+				5B91AFF61D44DCF40064562D /* PageControl */,
+				5B91AFFF1D44DCF40064562D /* SDCollectionViewCell.h */,
+				5B91B0001D44DCF40064562D /* SDCollectionViewCell.m */,
+				5B91B0011D44DCF40064562D /* SDCycleScrollView.h */,
+				5B91B0021D44DCF40064562D /* SDCycleScrollView.m */,
+				5B91B0031D44DCF40064562D /* UIView+SDExtension.h */,
+				5B91B0041D44DCF40064562D /* UIView+SDExtension.m */,
+			);
+			name = SDCycleScrollView;
+			sourceTree = "<group>";
+		};
+		5B91AFF61D44DCF40064562D /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				5B91AFF71D44DCF40064562D /* TAAbstractDotView.h */,
+				5B91AFF81D44DCF40064562D /* TAAbstractDotView.m */,
+				5B91AFF91D44DCF40064562D /* TAAnimatedDotView.h */,
+				5B91AFFA1D44DCF40064562D /* TAAnimatedDotView.m */,
+				5B91AFFB1D44DCF40064562D /* TADotView.h */,
+				5B91AFFC1D44DCF40064562D /* TADotView.m */,
+				5B91AFFD1D44DCF40064562D /* TAPageControl.h */,
+				5B91AFFE1D44DCF40064562D /* TAPageControl.m */,
+			);
+			name = PageControl;
+			path = 3rdLibs/SDCycleScrollView/PageControl;
+			sourceTree = "<group>";
+		};
+		5B91B0161D44F2410064562D /* CommonModels */ = {
+			isa = PBXGroup;
+			children = (
+				5B91B0171D44F29D0064562D /* KDAdvertiseModel.h */,
+				5B91B0181D44F29D0064562D /* KDAdvertiseModel.m */,
+				5B91B0191D44F29D0064562D /* KDLocaionModel.h */,
+				5B91B01A1D44F29D0064562D /* KDLocaionModel.m */,
+				5B91B0201D44F6F40064562D /* KDShopModel.h */,
+				5B91B0211D44F6F40064562D /* KDShopModel.m */,
+				5B91B0231D44FA770064562D /* KDActivityModel.h */,
+				5B91B0241D44FA770064562D /* KDActivityModel.m */,
+			);
+			name = CommonModels;
+			sourceTree = "<group>";
+		};
+		5B91B0291D4504610064562D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5B91B02A1D4504AB0064562D /* KDActionCollectionViewCell.h */,
+				5B91B02B1D4504AB0064562D /* KDActionCollectionViewCell.m */,
+				5B91B02C1D4504AB0064562D /* KDActionCollectionViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		5BCEDBDB1D1C2A0400EBD946 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				5BCEDBDC1D1C2A3100EBD946 /* KDRouterManger.h */,
+				5BCEDBDD1D1C2A3100EBD946 /* KDRouterManger.m */,
+			);
+			name = Router;
 			sourceTree = "<group>";
 		};
 		5BD91D0F1D0BF323006F64BE /* BaseClass */ = {
@@ -146,6 +367,8 @@
 			children = (
 				5BD91D231D0C0578006F64BE /* KDNetworkReachableManager.h */,
 				5BD91D241D0C0578006F64BE /* KDNetworkReachableManager.m */,
+				5B66AC9B1D152E060021FD5F /* KDEnvironmentManager.h */,
+				5B66AC9C1D152E060021FD5F /* KDEnvironmentManager.m */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -155,6 +378,12 @@
 			children = (
 				5BD91D281D0C5128006F64BE /* KDAppearance.h */,
 				5BD91D291D0C5128006F64BE /* KDAppearance.m */,
+				5B66AC9F1D1551510021FD5F /* KDCacheManager.h */,
+				5B66ACA01D1551510021FD5F /* KDCacheManager.m */,
+				5BCEDBE01D1FB5DF00EBD946 /* KDLoggerManager.h */,
+				5BCEDBE11D1FB5DF00EBD946 /* KDLoggerManager.m */,
+				5BCEDBE31D1FBA1F00EBD946 /* KDDeviceInfo.h */,
+				5BCEDBE41D1FBA1F00EBD946 /* KDDeviceInfo.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -228,8 +457,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B91AFE61D44C8C10064562D /* order_selected@2x.png in Resources */,
 				5B3F53FB1D0AF4F3004DB523 /* LaunchScreen.storyboard in Resources */,
+				5B91B02E1D4504AB0064562D /* KDActionCollectionViewCell.xib in Resources */,
 				5B3F53F81D0AF4F3004DB523 /* Assets.xcassets in Resources */,
+				5B91AFE71D44C8C10064562D /* order_selected@3x.png in Resources */,
+				5B91AFE31D44C8C10064562D /* main_page_selected@3x.png in Resources */,
+				5B91AFE51D44C8C10064562D /* mine_selected@3x.png in Resources */,
+				5B91AFE41D44C8C10064562D /* mine_selected@2x.png in Resources */,
+				5B91AFE01D44C8C10064562D /* fast_meal_selected@2x.png in Resources */,
+				5B91AFE21D44C8C10064562D /* main_page_selected@2x.png in Resources */,
+				5B91AFE11D44C8C10064562D /* fast_meal_selected@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,14 +526,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BCEDBDE1D1C2A3100EBD946 /* KDRouterManger.m in Sources */,
+				5B91B00B1D44DCF40064562D /* SDCycleScrollView.m in Sources */,
+				5B91B0221D44F6F40064562D /* KDShopModel.m in Sources */,
+				5B91B0081D44DCF40064562D /* TADotView.m in Sources */,
 				5BD91D2A1D0C5128006F64BE /* KDAppearance.m in Sources */,
+				5B91B00A1D44DCF40064562D /* SDCollectionViewCell.m in Sources */,
+				5BCEDBE51D1FBA1F00EBD946 /* KDDeviceInfo.m in Sources */,
+				5BCEDBE21D1FB5DF00EBD946 /* KDLoggerManager.m in Sources */,
 				5B3F53F31D0AF4F3004DB523 /* ViewController.m in Sources */,
+				5B91B01C1D44F29D0064562D /* KDLocaionModel.m in Sources */,
+				5B91B0071D44DCF40064562D /* TAAnimatedDotView.m in Sources */,
 				5B3F53F01D0AF4F3004DB523 /* AppDelegate.m in Sources */,
+				5B91B0281D4500EB0064562D /* KDActionPanelViewModel.m in Sources */,
 				5BD91D121D0BF366006F64BE /* KDBaseViewController.m in Sources */,
 				5BD91D191D0BF643006F64BE /* KDDefines.m in Sources */,
+				5B66ACA11D1551510021FD5F /* KDCacheManager.m in Sources */,
+				5B91B0061D44DCF40064562D /* TAAbstractDotView.m in Sources */,
+				5B91B01B1D44F29D0064562D /* KDAdvertiseModel.m in Sources */,
 				5BD91D211D0BFD6B006F64BE /* KDBaseVCModel.m in Sources */,
+				5B91B00C1D44DCF40064562D /* UIView+SDExtension.m in Sources */,
+				5B91B0091D44DCF40064562D /* TAPageControl.m in Sources */,
+				5B91B0051D44DCF40064562D /* NSData+SDDataCache.m in Sources */,
+				5B91B01F1D44F5360064562D /* KDActionModel.m in Sources */,
+				5B91AFEF1D44D7F20064562D /* KDMainPageController.m in Sources */,
+				5B66AC9D1D152E060021FD5F /* KDEnvironmentManager.m in Sources */,
 				5B3F53ED1D0AF4F3004DB523 /* main.m in Sources */,
 				5BD91D251D0C0578006F64BE /* KDNetworkReachableManager.m in Sources */,
+				5B91B02D1D4504AB0064562D /* KDActionCollectionViewCell.m in Sources */,
+				5B91B0251D44FA770064562D /* KDActivityModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

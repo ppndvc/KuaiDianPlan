@@ -10,4 +10,10 @@
 
 @interface KDActivityModel : NSObject
 
+//活动标题
+@property(nonatomic,copy)NSString *title;
+
+//活动图片名字
+@property(nonatomic,copy)NSString *imageName;
+
 @end

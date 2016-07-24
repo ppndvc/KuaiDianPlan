@@ -10,6 +10,10 @@
 
 @interface KDBaseViewController : UIViewController
 
+//页面参数
+@property(nonatomic,strong) NSDictionary *parameters;
+
+
 //网络是否可达
 -(BOOL)isNetworkReachable;
 

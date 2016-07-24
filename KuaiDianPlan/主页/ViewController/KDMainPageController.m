@@ -7,6 +7,20 @@
 //
 
 #import "KDMainPageController.h"
+#import "SDCycleScrollView.h"
+
+@interface KDMainPageController()
+
+//主tableview
+@property(nonatomic,strong)UITableView *tableView;
+
+//轮播图
+@property(nonatomic,strong)SDCycleScrollView *scrollImageView;
+
+//操作面板
+@property(nonatomic,strong)UICollectionView *actionPanelView;
+
+@end
 
 @implementation KDMainPageController
 

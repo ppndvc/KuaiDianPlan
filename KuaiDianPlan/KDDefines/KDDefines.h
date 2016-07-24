@@ -14,6 +14,8 @@
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 //屏幕高度
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+//判断是否合法字符串
+#define VALIDATE_STRING(a) ((a) && [(a) isKindOfClass:[NSString class]] && (a).length > 0)
 
 #pragma mark - Colors
 
@@ -64,6 +66,23 @@ typedef NS_ENUM(NSInteger, KDNetworkErrorType)
     KDNetworkRequestError = 1,
 };
 
+//网络环境类型
+typedef NS_ENUM(NSInteger, KDEnvironmentType)
+{
+    //生产环境
+    KDEnvironmentTypeOfProduct = 0,
+    //测试环境
+    KDEnvironmentTypeOfTest = 1,
+};
+//URL前缀类型
+typedef NS_ENUM(NSInteger, KDURLPrefixType)
+{
+    //http
+    KDURLPrefixTypeOfHTTP = 0,
+    //https
+    KDURLPrefixTypeOfHTTPS = 1,
+};
+
 //导航栏返回类型
 typedef NS_ENUM(NSInteger, KDNavigationBackType)
 {
@@ -79,3 +98,47 @@ typedef NS_ENUM(NSInteger, KDNavigationBackType)
 
 //错误页面的点击回调
 typedef void (^KDNetworkErrorPageTapBlock)(KDNetworkErrorType type);
+
+//视图显示的回调
+typedef void (^KDRouterVCAppearBlock)(void);
+
+//视图消失的回调
+typedef void (^KDRouterVCDisappearBlock)(NSString *vcKey, id params);
+
+
+#pragma mark - static strings
+
+//日志等级
+extern int const ddLogLevel;
+
+//系统缓存
+extern NSString *const kSystemCacheName;
+//用户缓存
+extern NSString *const kUserCacheName;
+
+#pragma mark - defined strings
+
+#define TABBAR_MAINPAGE_TITLE @"主页"
+
+#define TABBAR_ORDER_TITLE @"订单"
+
+#define TABBAR_FASTMEAL_TITLE @"抢饭"
+
+#define TABBAR_MINE_TITLE @"我的"
+
+
+#pragma mark - image name strings
+
+//tabbar
+#define TABBAR_MAINPAGE_IMAGE_NORMAL @"main_page_normal"
+#define TABBAR_MAINPAGE_IMAGE_SELECTED @"main_page_selected"
+
+#define TABBAR_ORDER_IMAGE_NORMAL @"order_normal"
+#define TABBAR_ORDER_IMAGE_SELECTED @"order_selected"
+
+#define TABBAR_FASTMEAL_IMAGE_NORMAL @"fast_meal_normal"
+#define TABBAR_FASTMEAL_IMAGE_SELECTED @"fast_meal_selected"
+
+#define TABBAR_MINE_IMAGE_NORMAL @"mine_normal"
+#define TABBAR_MINE_IMAGE_SELECTED @"mine_selected"
+

@@ -7,3 +7,9 @@
 //
 
 #import "KDDefines.h"
+
+int const ddLogLevel = LOG_LEVEL_VERBOSE;
+
+NSString *const kSystemCacheName = @"kSystemCacheName";
+
+NSString *const kUserCacheName = @"kUserCacheName";

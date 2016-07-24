@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "KDAppearance.h"
 #import "ViewController.h"
+#import "KDLoggerManager.h"
+//#import "KDVCViewController.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +25,9 @@
 {
     //设置主题颜色
     [KDAppearance setupAppearance];
+    
+    //开始日志
+    [[KDLoggerManager sharedInstance] startLoggingWithOptions:launchOptions];
     
     //设置window
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -63,43 +68,42 @@
         _tabBarController.tabBar.backgroundColor = [UIColor whiteColor];
         
         
-        //创建券商选择页面视图
-        UIViewController * vc1 =[[UIViewController alloc] init];
-        vc1.title = @"首页";
+        //
+        ViewController * vc1 =[[ViewController alloc] init];
         UINavigationController *mainPageNavi = [[UINavigationController alloc] initWithRootViewController:vc1];
         mainPageNavi.navigationBar.translucent = NO;
-        mainPageNavi.tabBarItem.title = @"首页";
+        mainPageNavi.tabBarItem.title = TABBAR_MAINPAGE_TITLE;
         //创建图片
-        mainPageNavi.tabBarItem.image = [UIImage imageNamed:@"openAccountIcon"];
-        mainPageNavi.tabBarItem.selectedImage = [UIImage imageNamed:@"openAccountIconHighlight"];
+        mainPageNavi.tabBarItem.image = [UIImage imageNamed:TABBAR_MAINPAGE_IMAGE_SELECTED];
+        mainPageNavi.tabBarItem.selectedImage = [[UIImage imageNamed:TABBAR_MAINPAGE_IMAGE_SELECTED]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         
         
-        //创建券商选择页面视图
+        //创建
         UIViewController * vc2 =[[UIViewController alloc] init];
         UINavigationController *orderPageNavi = [[UINavigationController alloc] initWithRootViewController:vc2];
         orderPageNavi.navigationBar.translucent = NO;
-        orderPageNavi.tabBarItem.title = @"订单";
+        orderPageNavi.tabBarItem.title = TABBAR_ORDER_TITLE;
         //创建图片
-        orderPageNavi.tabBarItem.image = [UIImage imageNamed:@"openAccountIcon"];
-        orderPageNavi.tabBarItem.selectedImage = [UIImage imageNamed:@"openAccountIconHighlight"];
+        orderPageNavi.tabBarItem.image = [UIImage imageNamed:TABBAR_ORDER_IMAGE_SELECTED];
+        orderPageNavi.tabBarItem.selectedImage = [[UIImage imageNamed:TABBAR_ORDER_IMAGE_SELECTED] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         
-        //创建券商选择页面视图
+        //创建
         UIViewController * vc3 =[[UIViewController alloc] init];
         UINavigationController *secKillPageNavi = [[UINavigationController alloc] initWithRootViewController:vc3];
         secKillPageNavi.navigationBar.translucent = NO;
-        secKillPageNavi.tabBarItem.title = @"抢饭";
+        secKillPageNavi.tabBarItem.title = TABBAR_FASTMEAL_TITLE;
         //创建图片
-        secKillPageNavi.tabBarItem.image = [UIImage imageNamed:@"openAccountIcon"];
-        secKillPageNavi.tabBarItem.selectedImage = [UIImage imageNamed:@"openAccountIconHighlight"];
+        secKillPageNavi.tabBarItem.image = [UIImage imageNamed:TABBAR_FASTMEAL_IMAGE_SELECTED];
+        secKillPageNavi.tabBarItem.selectedImage = [[UIImage imageNamed:TABBAR_FASTMEAL_IMAGE_SELECTED] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         
-        //创建券商选择页面视图
+        //创建
         UIViewController * vc4 =[[UIViewController alloc] init];
         UINavigationController *myPageNavi = [[UINavigationController alloc] initWithRootViewController:vc4];
         myPageNavi.navigationBar.translucent = NO;
-        myPageNavi.tabBarItem.title = @"我的";
+        myPageNavi.tabBarItem.title = TABBAR_MINE_TITLE;
         //创建图片
-        myPageNavi.tabBarItem.image = [UIImage imageNamed:@"openAccountIcon"];
-        myPageNavi.tabBarItem.selectedImage = [UIImage imageNamed:@"openAccountIconHighlight"];
+        myPageNavi.tabBarItem.image = [UIImage imageNamed:TABBAR_MINE_IMAGE_SELECTED];
+        myPageNavi.tabBarItem.selectedImage = [[UIImage imageNamed:TABBAR_MINE_IMAGE_SELECTED] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 
         
         _tabBarController.viewControllers = @[mainPageNavi,orderPageNavi,secKillPageNavi,myPageNavi];

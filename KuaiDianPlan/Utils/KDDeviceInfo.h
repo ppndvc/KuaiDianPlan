@@ -10,4 +10,16 @@
 
 @interface KDDeviceInfo : NSObject
 
+//获取设置model(iphone/ipad)
++(NSString *)deviceBrand;
+
+//获取版本号
++(NSString *)appVersion;
+
+//获取系统ios版本
++(NSString *)systemVersion;
+
+//获取设备名
++ (NSString*)deviceString;
+
 @end
