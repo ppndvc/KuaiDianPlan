@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class KDActionModel;
+
 @interface KDActionCollectionViewCell : UICollectionViewCell
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+//配置cell
+-(void)configureCellWithModel:(KDActionModel *)model;
 
 @end

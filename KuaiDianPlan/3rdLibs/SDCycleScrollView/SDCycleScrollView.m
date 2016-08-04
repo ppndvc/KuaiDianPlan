@@ -24,8 +24,9 @@
 #import "UIView+SDExtension.h"
 #import "TAPageControl.h"
 #import "NSData+SDDataCache.h"
+#import "KDActionModel.h"
 
-
+#define CHANGE_IMAGE_INTERVAL 5.0f
 
 NSString * const ID = @"cycleCell";
 
@@ -47,7 +48,7 @@ NSString * const ID = @"cycleCell";
 {
     if (self = [super initWithFrame:frame]) {
         self.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
-        _autoScrollTimeInterval = 1.0;
+        _autoScrollTimeInterval = CHANGE_IMAGE_INTERVAL;
         [self setupMainView];
     }
     return self;
@@ -66,6 +67,36 @@ NSString * const ID = @"cycleCell";
     return cycleScrollView;
 }
 
++ (instancetype)cycleScrollViewWithFrame:(CGRect)frame actionModels:(NSArray *)actionModels
+{
+    if (actionModels && [actionModels isKindOfClass:[NSArray class]] && actionModels.count > 0)
+    {
+        NSMutableArray *imageURLArray = [[NSMutableArray alloc] initWithCapacity:actionModels.count];
+        for (int i = 0; i < actionModels.count; i++)
+        {
+            KDActionModel *model = actionModels[i];
+            if (model.imageURL)
+            {
+                NSURL *url = [[NSURL alloc] initWithString:model.imageURL];
+                if (url)
+                {
+                    [imageURLArray addObject:url];
+                }
+            }
+        }
+        
+        if (imageURLArray.count > 0)
+        {
+            SDCycleScrollView *cycleScrollView = [[self alloc] initWithFrame:frame];
+            cycleScrollView.imageURLsGroup = imageURLArray;
+            return cycleScrollView;
+        }
+        
+        return nil;
+    }
+    
+    return nil;
+}
 - (void)setFrame:(CGRect)frame
 {
     [super setFrame:frame];

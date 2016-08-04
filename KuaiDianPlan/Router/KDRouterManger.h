@@ -17,6 +17,10 @@
 //初始化路由表
 -(void)configureRouterPlist;
 
+
+//根据url路由
+-(void)routeVCWithURL:(NSString *__null_unspecified)urlString;
+
 //以push的方式加载视图
 -(void)pushVCWithKey:(NSString *__null_unspecified)vcKey parentVC:(UIViewController *__null_unspecified)parentVC;
 //以push的方式加载视图

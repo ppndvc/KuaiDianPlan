@@ -19,5 +19,6 @@
 #import <YYModel/YYModel.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "KDDefines.h"
+#import "NSString+Tools.h"
 
 #endif

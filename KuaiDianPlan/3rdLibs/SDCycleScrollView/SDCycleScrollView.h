@@ -46,4 +46,7 @@ typedef enum {
 
 + (instancetype)cycleScrollViewWithFrame:(CGRect)frame imageURLsGroup:(NSArray *)imageURLsGroup;
 
++ (instancetype)cycleScrollViewWithFrame:(CGRect)frame actionModels:(NSArray *)actionModels;
+
+
 @end

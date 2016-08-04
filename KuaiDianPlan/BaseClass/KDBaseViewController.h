@@ -17,4 +17,10 @@
 //网络是否可达
 -(BOOL)isNetworkReachable;
 
+-(void)showHUD;
+-(void)hideHUD;
+
+-(void)showHUDWithInfo:(NSString *)info;
+-(void)hideHUDWithInfo:(NSString *)info;
+
 @end

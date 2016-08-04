@@ -11,4 +11,5 @@ pod 'Routable','~> 0.1.1'
 pod 'FDFullscreenPopGesture','1.1'
 pod 'IFTTTLaunchImage'
 pod 'Reachability'
+pod 'MGSwipeTableCell'
 end

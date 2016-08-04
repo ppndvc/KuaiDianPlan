@@ -33,6 +33,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    self.view.backgroundColor = APP_BG_COLOR;
     
 //    self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight;
 //    self.view.autoresizesSubviews = YES;
@@ -119,6 +120,26 @@
 {
     
 }
+
+#pragma mark - HUD methods
+-(void)showHUD
+{
+    [SVProgressHUD show];
+}
+-(void)hideHUD
+{
+    [SVProgressHUD dismiss];
+}
+
+-(void)showHUDWithInfo:(NSString *)info
+{
+    
+}
+-(void)hideHUDWithInfo:(NSString *)info
+{
+    
+}
+
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UIApplicationDidBecomeActiveNotification object:nil];

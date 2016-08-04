@@ -10,12 +10,25 @@
 
 //系统版本定义
 #define IS_OS_7_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue]>= 7.0)
+//系统版本定义
+#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue]>= 8.0)
 //屏幕宽度
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 //屏幕高度
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 //判断是否合法字符串
 #define VALIDATE_STRING(a) ((a) && [(a) isKindOfClass:[NSString class]] && (a).length > 0)
+
+//导航栏 + 状态栏高度
+#define NAVIGATION_BAR_HEIHT 64
+
+//tabbar高度
+#define TAB_BAR_HEIHT 49
+
+//分割栏高度
+#define GENERAL_SEPERATOR_HEIGHT 10.0f
+
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
 #pragma mark - Colors
 
@@ -42,10 +55,15 @@
 //hud前景颜色
 #define HUD_FG_COLOR ([UIColor whiteColor])
 
+#define PRICE_ORANG_COLOR ([UIColor colorWithRed:253/255.0 green:97/255.0 blue:33/255.0 alpha:1])
+
 #pragma mark - Font Size
 
 //导航栏标题字体
 #define NAVIBAR_TITLE_FONT_SIZE 20.0f
+
+//文本字体特大
+#define TEXT_FONT_VERY_BIG_SIZE 20.0f
 //文本字体大
 #define TEXT_FONT_BIG_SIZE 16.0f
 //文本字体中
@@ -105,6 +123,8 @@ typedef void (^KDRouterVCAppearBlock)(void);
 //视图消失的回调
 typedef void (^KDRouterVCDisappearBlock)(NSString *vcKey, id params);
 
+//刷新页面回调
+typedef void (^KDMainPageUpdateCallBackBlock)(NSArray *headerViewModels);
 
 #pragma mark - static strings
 

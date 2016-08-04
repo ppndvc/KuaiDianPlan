@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+//获取tabbar
+-(UITabBarController *)getTabbarVC;
 
 @end
 

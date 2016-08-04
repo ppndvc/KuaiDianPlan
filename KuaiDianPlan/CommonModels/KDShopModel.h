@@ -19,6 +19,9 @@
 //图片地址
 @property(nonatomic,copy)NSString *imageURL;
 
+//图片名字
+@property(nonatomic,copy)NSString *imageName;
+
 //地址
 @property(nonatomic,copy)NSString *address;
 
@@ -34,8 +37,14 @@
 //销量
 @property(nonatomic,assign)NSInteger salesVolume;
 
+//剩余数量
+@property(nonatomic,assign)NSInteger remainCount;
+
 //最低价
 @property(nonatomic,assign)CGFloat minPrice;
+
+//活动价
+@property(nonatomic,assign)CGFloat activityPrice;
 
 //运费
 @property(nonatomic,assign)CGFloat transportExpend;

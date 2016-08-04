@@ -10,6 +10,7 @@
 #import "KDAppearance.h"
 #import "ViewController.h"
 #import "KDLoggerManager.h"
+#import "KDMainPageController.h"
 //#import "KDVCViewController.h"
 
 @interface AppDelegate ()
@@ -34,6 +35,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
+    
     // Override point for customization after application launch.
     return YES;
 }
@@ -59,6 +61,11 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+-(UITabBarController *)getTabbarVC
+{
+    return self.tabBarController;
+}
+
 - (UITabBarController *)tabBarController
 {
     if (!_tabBarController)
@@ -69,8 +76,8 @@
         
         
         //
-        ViewController * vc1 =[[ViewController alloc] init];
-        UINavigationController *mainPageNavi = [[UINavigationController alloc] initWithRootViewController:vc1];
+        KDMainPageController * mainPage =[[KDMainPageController alloc] init];
+        UINavigationController *mainPageNavi = [[UINavigationController alloc] initWithRootViewController:mainPage];
         mainPageNavi.navigationBar.translucent = NO;
         mainPageNavi.tabBarItem.title = TABBAR_MAINPAGE_TITLE;
         //创建图片
