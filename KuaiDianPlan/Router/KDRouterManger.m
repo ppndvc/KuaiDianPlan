@@ -9,8 +9,8 @@
 #import "KDRouterManger.h"
 #import "AppDelegate.h"
 
-#define ROUTER_FILES @"router_files"
-#define CLASS_NAME @"class_name"
+#define ROUTER_FILES @"RouterFiles"
+#define CLASS_NAME @"ClassName"
 
 #define SCHEME_SEPERATOR @"://"
 #define PARAMETER_SEPERATOR @"?"

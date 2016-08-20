@@ -31,6 +31,9 @@
 //section对应行数
 -(NSInteger)collectionViewRows;
 
+//获取collectionview对应的动作
+-(KDActionModel *)collectionViewActionForIndex:(NSInteger)index;
+
 //配置cell
 -(void)configureCollectionViewCell:(KDActionCollectionViewCell *)cell indexPath:(NSIndexPath *)indexPath;
 

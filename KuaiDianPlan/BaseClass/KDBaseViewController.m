@@ -9,6 +9,9 @@
 #import "KDBaseViewController.h"
 #import "KDNetworkReachableManager.h"
 
+#define BACK_BUTTON_WIDTH 12
+#define BACK_BUTTON_HEIGHT 20
+
 @interface KDBaseViewController ()
 
 //导航栏左侧按钮
@@ -79,9 +82,9 @@
     _backType = type;
     if (type != KDNavigationNoBackAction)
     {
-        _leftBarButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 40)];
+        _leftBarButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, BACK_BUTTON_WIDTH, BACK_BUTTON_HEIGHT)];
         
-        [_leftBarButton setBackgroundImage:[UIImage imageNamed:@"naviBarArrow"] forState:UIControlStateNormal];
+        [_leftBarButton setBackgroundImage:[UIImage imageNamed:@"navi_back_array"] forState:UIControlStateNormal];
         [_leftBarButton addTarget:self action:@selector(leftBarButtonAction) forControlEvents:UIControlEventTouchUpInside];
         _leftBarButton.backgroundColor = [UIColor clearColor];
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:_leftBarButton];
@@ -139,7 +142,13 @@
 {
     
 }
-
+-(void)setVCParams:(NSDictionary *)params
+{
+    if (params && [params isKindOfClass:[NSDictionary class]])
+    {
+        _parameters = [[NSDictionary alloc] initWithDictionary:params];
+    }
+}
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UIApplicationDidBecomeActiveNotification object:nil];

@@ -11,6 +11,7 @@
 #import "SDCycleScrollView.h"
 #import "KDMainPageViewModel.h"
 #import "KDShopModel.h"
+#import "KDActionModel.h"
 #import "KDActivityModel.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "KDActionCollectionViewCell.h"
@@ -155,7 +156,11 @@ static NSString *kCollectionViewCellIdentifier = @"MainPageCollectionViewCell";
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    DDLogInfo(@"---- didSelectItemAtIndexPath");
+    KDActionModel *action = [_mainViewModel collectionViewActionForIndex:indexPath.row];
+    if (action)
+    {
+        [[KDRouterManger sharedManager] routeVCWithURL:action.actionString];
+    }
     
 }
 
@@ -186,6 +191,10 @@ static NSString *kCollectionViewCellIdentifier = @"MainPageCollectionViewCell";
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
 {
     KDActionModel *action = [_mainViewModel headerViewActionForIndex:index];
+    if (action)
+    {
+        [[KDRouterManger sharedManager] routeVCWithURL:action.actionString];
+    }
 }
 #pragma mark - private methods
 -(void)beginUpdateViewData

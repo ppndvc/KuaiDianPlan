@@ -13,4 +13,6 @@
 //包含字符串
 -(BOOL)containSubStr:(NSString *)subStr;
 
+//微博时间格式
++(NSString *)weiboFormateTimeWithTimeInterval:(NSTimeInterval)dateStamp;
 @end

@@ -86,28 +86,28 @@
         KDActionModel *model = [[KDActionModel alloc] init];
         model.title = @"美食";
         model.imageName = TABBAR_ORDER_IMAGE_SELECTED;
-        model.actionString = @"push://MallVC?kind=1&title=美食";
+        model.actionString = @"push://MallVC?type=1&title=美食";
         [cvArray addObject:model];
     }
     {
         KDActionModel *model = [[KDActionModel alloc] init];
         model.title = @"品牌馆";
         model.imageName = TABBAR_ORDER_IMAGE_SELECTED;
-        model.actionString = @"push://MallVC?kind=2&title=品牌馆";
+        model.actionString = @"push://MallVC?type=2&title=品牌馆";
         [cvArray addObject:model];
     }
     {
         KDActionModel *model = [[KDActionModel alloc] init];
         model.title = @"早餐";
         model.imageName = TABBAR_ORDER_IMAGE_SELECTED;
-        model.actionString = @"push://MallVC?kind=3&title=早餐";
+        model.actionString = @"push://MallVC?type=4&title=早餐";
         [cvArray addObject:model];
     }
     {
         KDActionModel *model = [[KDActionModel alloc] init];
         model.title = @"商城";
         model.imageName = TABBAR_ORDER_IMAGE_SELECTED;
-        model.actionString = @"push://MallVC?kind=1&title=商城";
+        model.actionString = @"push://MallVC?type=3&title=商城";
         [cvArray addObject:model];
     }
     
@@ -149,6 +149,17 @@
     return action;
 }
 
+-(KDActionModel *)collectionViewActionForIndex:(NSInteger)index
+{
+    KDActionModel *action = nil;
+    
+    if (_mainModel && _mainModel.collectionViewModelArray && _mainModel.collectionViewModelArray.count > index)
+    {
+        action = _mainModel.collectionViewModelArray[index];
+    }
+    
+    return action;
+}
 -(NSInteger)tableViewRowsForSection:(NSInteger)section
 {
     NSInteger rows = 0;

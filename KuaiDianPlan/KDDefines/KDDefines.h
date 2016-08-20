@@ -54,8 +54,10 @@
 #define HUD_BG_COLOR ([UIColor colorWithRed:102.0/255.0 green:102.0/255.0 blue:102.0/255.0 alpha:0.9])
 //hud前景颜色
 #define HUD_FG_COLOR ([UIColor whiteColor])
-
+//价格橘色
 #define PRICE_ORANG_COLOR ([UIColor colorWithRed:253/255.0 green:97/255.0 blue:33/255.0 alpha:1])
+//红色
+#define APPD_RED_COLOR ([UIColor colorWithRed:234/255.0 green:63/255.0 blue:53/255.0 alpha:1])
 
 #pragma mark - Font Size
 
@@ -112,6 +114,37 @@ typedef NS_ENUM(NSInteger, KDNavigationBackType)
     KDNavigationNoBackAction = 2,
 };
 
+//Mall页面类型
+typedef NS_ENUM(NSInteger, KDMallType)
+{
+    //快点
+    KDMallTypeOfDefault = 0,
+    //美食
+    KDMallTypeOfDeliciousFood = 1,
+    //品牌馆
+    KDMallTypeOfBrandShop = 2,
+    //商城
+    KDMallTypeOfNormalShop = 3,
+    //早餐
+    KDMallTypeOfBreakFast = 4,
+};
+
+//订单状态类型
+typedef NS_ENUM(NSInteger, KDOrderStatus)
+{
+    //未支付
+    KDOrderStatusOfNotCharged = 0,
+    //未接单
+    KDOrderStatusOfNotAccepted = 1,
+    //已接单
+    KDOrderStatusOfAlreadyAccepted = 2,
+    //正在派送
+    KDOrderStatusOfDelivering = 3,
+    //已完成但未评价
+    KDOrderStatusOfSuccessButNoEvaluated = 4,
+    //已完成以评价
+    KDOrderStatusOfSuccessAndEvaluated = 5,
+};
 #pragma mark - Blocks
 
 //错误页面的点击回调
@@ -138,6 +171,8 @@ extern NSString *const kUserCacheName;
 
 #pragma mark - defined strings
 
+#define APP_NAME @"快点"
+
 #define TABBAR_MAINPAGE_TITLE @"主页"
 
 #define TABBAR_ORDER_TITLE @"订单"
@@ -146,6 +181,24 @@ extern NSString *const kUserCacheName;
 
 #define TABBAR_MINE_TITLE @"我的"
 
+#define DELICIOUS_FOOD @"美食"
+#define BRAND_SHOP @"品牌馆"
+#define NORMAL_SHOP @"商城"
+#define BREAKFAST @"早餐"
+
+#define CATEGORY_SEARCH @"分类"
+#define SORT_SEARCH @"排序"
+#define FILTER_SEARCH @"筛选"
+
+#define ORDER_NOT_ACCEPTED @"商家未接单"
+#define ORDER_HAS_ACCEPTED @"商家已接单"
+#define ORDER_IS_DELIVERING @"配送途中"
+#define ORDER_COMPLETED @"订单已完成"
+
+#define BEING_CHARGE_BUTTON_TITLE @"待支付"
+#define ALREADY_CHARGED_BUTTON_TITLE @"已支付"
+#define BEING_EVALUATE_BUTTON_TITLE @"评价"
+#define ALREADY_EVALUATE_BUTTON_TITLE @"已评价"
 
 #pragma mark - image name strings
 

@@ -7,7 +7,6 @@
 //
 
 #import "KDBaseTableViewCell.h"
-#import "YYWebImage.h"
 #import "KDActivityView.h"
 #import "CWStarRateView.h"
 

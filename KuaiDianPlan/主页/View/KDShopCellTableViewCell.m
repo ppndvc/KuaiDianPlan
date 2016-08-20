@@ -8,6 +8,7 @@
 
 #import "KDShopCellTableViewCell.h"
 #import "KDShopModel.h"
+#import "YYWebImage.h"
 
 @interface KDShopCellTableViewCell ()
 

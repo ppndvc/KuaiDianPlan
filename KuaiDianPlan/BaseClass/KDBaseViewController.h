@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "KDRouterManger.h"
 @interface KDBaseViewController : UIViewController
 
 //页面参数
@@ -22,5 +22,14 @@
 
 -(void)showHUDWithInfo:(NSString *)info;
 -(void)hideHUDWithInfo:(NSString *)info;
+
+//设置参数
+-(void)setVCParams:(NSDictionary *)params;
+
+//设置导航栏后退按钮
+-(void)setNaviBarItemWithType:(KDNavigationBackType)type;
+
+//返回事件
+-(void)leftBarButtonAction;
 
 @end
